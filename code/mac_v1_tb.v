@@ -1,7 +1,7 @@
 `timescale 1ns/10ps
 module mac_v1_tb;
 
-wire [7:0] a, b;
+reg [7:0] a, b;
 wire [21:0] result;
 reg rst, clk;
 
