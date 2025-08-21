@@ -1,11 +1,11 @@
 `timescale 1ns/10ps
 module mac_v1_tb;
 
-reg [21:0] in;
-wire [21:0] out;
+wire [7:0] a, b;
+wire [21:0] result;
 reg rst, clk;
 
-reg_acc_22bit test1(.in(in), .rst(rst), .clk(clk), .out(out));
+mac_v1 test1(.a(a), .b(b), .clk(clk), .rst(rst), .result(result));
 
 initial begin
 	clk = 0;
@@ -15,12 +15,14 @@ end
 always #5 clk = ~clk;
 
 initial begin
-	$monitor($time, "in = %d, out = %d, rst = %b, clk = %b", in,out,rst,clk);
-	#20	in = 22'd134; rst = 0;
-	#20	in = 22'd132; rst = 0;
-	#20	in = 22'd200; rst = 0;
-	#20	in = 22'd150; rst = 1;
-	#20	in = 22'd134; rst = 0;
+	$monitor($time, "a = %d, b = %d, result = %d, rst = %b, clk = %b", a,b,result,rst,clk);
+	#20	a = 8'd134; b = 8'd120; 
+	#20	a = 8'd10; b = 8'd10; 
+	#20	a = 8'd101; b = 8'd21; 
+	#20 rst = 1;
+	#20 rst = 0;
+	#20 a = 8'd20; b = 8'd20;
+	#20 a = 8'd20; b = 8'd20;
 	#20	$finish;
 end
 
