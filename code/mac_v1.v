@@ -4,8 +4,8 @@ module mac_v1 (a, b, clk, rst, result);
     input clk, rst;
     output [21:0] result;
 
-    reg [7:0] reg_a, reg_b;
-    reg [21:0] mul, acc;
+    wire [7:0] reg_a, reg_b;
+    wire [21:0] mul, acc;
 
     reg_in_8bit in_reg_1(a, rst, clk, reg_a);
     reg_in_8bit in_reg_2(b, rst, clk, reg_b);

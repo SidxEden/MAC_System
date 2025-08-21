@@ -2,22 +2,26 @@ module reg_acc_22bit (in, rst, clk, out);
 
     input [21:0] in;
     input rst, clk;
-    output reg [21:0] out;
+    output [21:0] out;
+
+    reg [21:0] store;
 
     initial begin
-        out = 0;
+        store = 0;
     end
 
     always @(posedge clk or posedge rst ) begin
         if(rst)
         begin
-            out <= 0;
+            store <= 0;
         end
 
         else    begin
-            out <= in;
+            store <= in;
 
         end   
     end
+
+    assign out = store;
      
 endmodule

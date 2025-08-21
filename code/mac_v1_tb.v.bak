@@ -12,7 +12,7 @@ initial begin
 	rst = 0;
 end
 
-always #20 clk = ~clk;
+always #5 clk = ~clk;
 
 initial begin
 	$monitor($time, "a = %d, b = %d, result = %d, rst = %b, clk = %b", a,b,result,rst,clk);
