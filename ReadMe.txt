@@ -1,3 +1,3 @@
-- A simple MAC (Multiply and Accumulate) System has been realised using Verilog.
-- It takes 2 8-bit inputs, multiplies them and accumulates them in an accumulating register.
+- A simple MAC (Multiply and Accumulate) System that has been realised using Verilog.
+- It takes 2 8-bit inputs, multiplies them and accumulates them in an accumulating register and puts out the output.
 - version 1 is the most basic one, whereas version 2 (under working) has much more features which enables user to have more control over the system.
